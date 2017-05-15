@@ -1,0 +1,11 @@
+body { background-color: red;}
+
+h1 {font-style:italic}
+
+img {
+    width:200px;
+}
+
+div img {
+    width:100px
+}
