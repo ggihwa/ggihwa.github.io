@@ -4,8 +4,41 @@
 	<meta charset="utf-8">
 	<title>Legendary Quest</title>
 	<link rel="stylesheet" href="style.css" />
-	<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 </head>
 <body>
-<iframe src="https://gh.riotgames.com/pages/kr-thunderdome/lol-satellite/"></iframe></body>
+<div class="layout">
+	<div class="wrapper">
+		<div id="map">
+			<div class="title">LoL SATELLITE</div>
+			<div class="timer"></div>
+			<div class="legends">
+				<div class="legend-item legend-wards" onclick="lolSatellite.toggleLegend('wards');">
+					<div class="checkbox checked"></div>Wards
+				</div>
+				<div class="legend-item legend-kills" onclick="lolSatellite.toggleLegend('kills');">
+					<div class="checkbox checked"></div>Kills
+				</div>
+				<div class="legend-item legend-teemos" onclick="lolSatellite.toggleLegend('teemos');">
+					<div class="checkbox checked"></div>Teemos
+				</div>
+				<div class="legend-item legend-yasuos" onclick="lolSatellite.toggleLegend('yasuos');">
+					<div class="checkbox checked"></div>Yasuos
+				</div>
+			</div>
+			<div class="tooltip"></div>
+			<div class="wards"></div>
+			<div class="kills"></div>
+			<div class="teemos"></div>
+			<div class="yasuos"></div>
+			<img src="images/map.svg" width="1055px" />
+			<div class="timetracker-container">
+				<input id="slider" type="range" min="0" max="1439"
+				       step="1" value="0" data-orientation="vertical">
+			</div>
+		</div>
+	</div>
+</div>
+<script src="ward.js"></script>
+</body>
 </html>

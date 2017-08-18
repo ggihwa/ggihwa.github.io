@@ -9,20 +9,20 @@ const regions = {
 
 const regionModifier = {
   "wards": {
-    "KR": 0.07 / 7,
-    "BR1": 1.0 / 7,
-    "TR1": 0.25 / 7,
-    "NA1": 1.0 / 7,
-    "EUW1": 0.4 / 7,
-    "EUN1": 0.5 / 7
+    "KR": 0.07 / 10,
+    "BR1": 1.0 / 10,
+    "TR1": 0.25 / 10,
+    "NA1": 1.0 / 10,
+    "EUW1": 0.4 / 10,
+    "EUN1": 0.5 / 10
   },
   "kills": {
-    "KR": 0.07 / 7,
-    "BR1": 1.0 / 7,
-    "TR1": 0.25 / 7,
-    "NA1": 1.0 / 7,
-    "EUW1": 0.4 / 7,
-    "EUN1": 0.5 / 7
+    "KR": 0.07 / 10,
+    "BR1": 1.0 / 10,
+    "TR1": 0.25 / 10,
+    "NA1": 1.0 / 10,
+    "EUW1": 0.4 / 10,
+    "EUN1": 0.5 / 10
   },
   "teemos": {
     "KR": 1,
@@ -102,6 +102,7 @@ let fetchingInterval = 60000;
 let fetchingIntervalId;
 let canvasId;
 let date = '20170816';
+const baseUrl = 'https://halloffame.leagueoflegends.co.kr';
 
 const lolSatellite = {
   init: function (selectedMinOfDay = 0) {
@@ -122,28 +123,28 @@ const lolSatellite = {
 
     // wards
     $.ajax({
-      url: 'http://10.179.5.110:8080/lol/satellite/v1/ward-count?date=' + date + '&minOfDay=' + minOfDay
+      url: `${baseUrl}/lol/satellite/v1/ward-count?date=${date}&minOfDay=${minOfDay}`
     }).done(function (serverResponseData) {
       self.pushDataAndRun("wards", serverResponseData);
     });
 
     // kills
     $.ajax({
-      url: 'http://10.179.5.110:8080/lol/satellite/v1/kill-count?date=' + date + '&minOfDay=' + minOfDay
+      url: `${baseUrl}/lol/satellite/v1/kill-count?date=${date}&minOfDay=${minOfDay}`
     }).done(function (serverResponseData) {
       self.pushDataAndRun("kills", serverResponseData);
     });
 
     // champion (teemo 17)
     $.ajax({
-      url: 'http://10.179.5.110:8080/lol/satellite/v1/champ-count?date=' + date + '&minOfDay=' + minOfDay + '&championId=17'
+      url: `${baseUrl}/lol/satellite/v1/champ-count?date=${date}&minOfDay=${minOfDay}&championId=17`
     }).done(function (serverResponseData) {
       self.pushDataAndRun("teemos", serverResponseData);
     });
 
     // champion (yasuo 157)
     $.ajax({
-      url: 'http://10.179.5.110:8080/lol/satellite/v1/champ-count?date=' + date + '&minOfDay=' + minOfDay + '&championId=157'
+      url: `${baseUrl}/lol/satellite/v1/champ-count?date=${date}&minOfDay=${minOfDay}&championId=157`
     }).done(function (serverResponseData) {
       self.pushDataAndRun("yasuos", serverResponseData);
     });
