@@ -188,7 +188,7 @@ span {
     opacity:0;
     /*background-color: #2658d6;*/
     /*box-shadow: 0 0 3px 2px #2658d6;*/
-    -webkit-animation: yasuos-pulse 2s ease-out 1s infinite;
+    -webkit-animation: yasuos-pulse 2s infinite;
 }
 
 @-webkit-keyframes wards-pulse {
