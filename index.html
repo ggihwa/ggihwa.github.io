@@ -42,7 +42,6 @@
 <script src="ward.js"></script>
 <script>
 	window.onload = function(){
-	  console.log('loaded');
 	  setTimeout(function(){
         const targetWindow = window.opener || window.top;
         targetWindow.postMessage({messageType: 'rcp-fe-lol-home-loaded'}, '*');
