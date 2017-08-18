@@ -167,11 +167,6 @@ const lolSatellite = {
     const self = this;
     const canvas = document.getElementsByClassName(dataType)[0];
     canvas.classList.add(`${dataType}-${canvasId}`);
-    if (canvas.classList.length > 5) {
-      for (let i=1; i<canvas.classList.length - 2; i++) {
-        canvas.classList.remove(canvas.classList[i]);
-      }
-    }
     for (const region in data[dataType]) {
       self.addPointDoms(region, dataType, data[dataType][region], canvas);
     }
