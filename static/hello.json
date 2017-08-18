@@ -1,0 +1,66 @@
+{
+  "navigation": [
+    {
+      "id": "star_guardian",
+      "displayName": "Star Guardian",
+      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/event/graceful-cobra",
+      "priority": 5,
+      "enabled": true
+    },
+    {
+      "id": "overview",
+      "displayName": "Overview",
+      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/overview",
+      "priority": 10,
+      "enabled": true,
+      "_abtest": {
+        "abtestId": "test-small-news-cards-1",
+        "groups": [
+          {
+            "abtestGroupId": "a",
+            "overrides": {
+              "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/overview/small-news-a"
+            }
+          },
+          {
+            "abtestGroupId": "b",
+            "overrides": {
+              "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/overview/small-news-b"
+            }
+          }
+        ],
+        "strategy": {
+          "name": "even-odd-account-id"
+        }
+      }
+    },
+    {
+      "id": "news",
+      "displayName": "News",
+      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/news",
+      "priority": 20,
+      "enabled": true
+    },
+    {
+      "id": "latest_patch_notes",
+      "displayName": "Patch Notes",
+      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/article/latest-patch-notes",
+      "priority": 30,
+      "enabled": true
+    },
+    {
+      "id": "merch_hub",
+      "displayName": "Merch",
+      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/merch",
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "id": "Satellit",
+      "displayName": "LOL Satellit",
+      "url": "//gh.riotgames.com/pages/kr-thunderdome/lol-satellite/",
+      "priority": 50,
+      "enabled": true
+    }
+  ]
+}
