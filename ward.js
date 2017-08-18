@@ -212,7 +212,10 @@ const lolSatellite = {
 
   addSliderEvent: function () {
     $('#slider').on('change', function () {
-      if(minOfDay === this.value) return false;
+      if(minOfDay === this.value) {
+        document.getElementsByClassName('title')[0].innerHTML = "FUCKED";
+        return false;
+      }
       clearInterval(fetchingIntervalId);
 
       for (dataKey in data) {
