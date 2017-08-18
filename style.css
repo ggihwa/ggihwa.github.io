@@ -115,8 +115,12 @@ html, body {
 
 .layout {
     width: 1055px;
-    height: 720px;
+    height: 710px;
     background-size: cover;
+}
+
+.wrapper {
+    padding-top: 80px;
 }
 
 span {
