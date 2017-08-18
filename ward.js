@@ -173,12 +173,22 @@ const lolSatellite = {
     self.addPoints(dataType);
   },
 
+  getNewCanvas: function(dataType){
+    const canvas = document.getElementsByClassName(`${dataType}`)[0];
+    const newCanvas = document.createElement('div');
+    canvas && (newCanvas.style.display = canvas.style.display);
+    canvas && setTimeout(function(){document.getElementsByClassName(`${dataType}`)[0].remove();},1000);
+    newCanvas.classList.add(dataType);
+    newCanvas.classList.add(`${dataType}-${canvasId}`);
+    if(canvasId >= 0) document.getElementById('map').appendChild(newCanvas);
+    return newCanvas;
+  },
+
   addPoints: function (dataType) {
     const self = this;
-    const canvas = document.getElementsByClassName(dataType)[0];
-    canvas.classList.add(`${dataType}-${canvasId}`);
+    const canvas = self.getNewCanvas(dataType);
     for (const region in data[dataType]) {
-      self.addPointDoms(region, dataType, data[dataType][region], canvas);
+      self.addPointDoms(region, dataType, data[dataType][region], canvas, minOfDay);
     }
   },
 
@@ -199,8 +209,11 @@ const lolSatellite = {
     this.timerUpdateInterval = setInterval(update, 1000);
   },
 
-  addPointDoms: function (region, dataType, count, canvas) {
+  addPointDoms: function (region, dataType, count, canvas, selfMinOfDay) {
     let i = 0;
+    if(minOfDay !== selfMinOfDay) {
+      return;
+    }
     for (i; i < count; i++) {
       canvas && setTimeout(function () {
         const light = document.createElement('span');
@@ -225,12 +238,8 @@ const lolSatellite = {
       if(minOfDay === this.value) return false;
       clearInterval(fetchingIntervalId);
 
-      for (dataKey in data) {
-        const canvas = document.getElementsByClassName(`${dataKey}-${canvasId}`)[0];
-        const newCanvas = document.createElement('div');
-        canvas && (newCanvas.style.display = canvas.style.display);
-        canvas && document.getElementsByClassName(`${dataKey}-${canvasId}`)[0].remove();
-        newCanvas.classList.add(dataKey);
+      for (dataType in data) {
+        let newCanvas = lolSatellite.getNewCanvas(dataType);
         document.getElementById('map').appendChild(newCanvas);
       }
       lolSatellite.init(this.value);
