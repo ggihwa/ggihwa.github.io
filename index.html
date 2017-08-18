@@ -44,7 +44,7 @@
 	window.onload = function(){
 	  setTimeout(function(){
         const targetWindow = window.opener || window.top;
-        targetWindow.postMessage({messageType: 'rcp-fe-lol-home-loaded'}, '*');
+        targetWindow.postMessage({messageType: 'rcp-fe-lol-home-loaded', type: 'RClientWindowMessenger'}, '*');
 	  },1000);
 	}
 </script>
