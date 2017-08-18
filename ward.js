@@ -116,7 +116,7 @@ const lolSatellite = {
 
   fetchData: function (self) {
     //0~1439
-    if (minOfDay > 1439) return;
+    if (minOfDay > 1439) minOfDay=0;
 
     canvasId = minOfDay;
     document.getElementById('slider').value = minOfDay;
@@ -126,7 +126,6 @@ const lolSatellite = {
       url: `${baseUrl}/lol/satellite/v1/ward-count?date=${date}&minOfDay=${minOfDay}`
     }).done(function (serverResponseData) {
       self.pushDataAndRun("wards", serverResponseData);
-      console.log(serverResponseData)
     });
 
     // kills
@@ -219,7 +218,7 @@ const lolSatellite = {
       for (dataKey in data) {
         const canvas = document.getElementsByClassName(`${dataKey}-${canvasId}`)[0];
         const newCanvas = document.createElement('div');
-        newCanvas.style.display = canvas.style.display;
+        canvas && (newCanvas.style.display = canvas.style.display);
         canvas && document.getElementsByClassName(`${dataKey}-${canvasId}`)[0].remove();
         newCanvas.classList.add(dataKey);
         document.getElementById('map').appendChild(newCanvas);
