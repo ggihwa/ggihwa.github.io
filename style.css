@@ -276,3 +276,10 @@ span {
     padding: 8px;
     color: rgba(200, 200, 200, 0.5);
 }
+
+.tooltip strong{
+    display:block;
+    padding-bottom:3px;
+    margin-bottom:5px;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.5);
+}

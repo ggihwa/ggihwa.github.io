@@ -126,6 +126,7 @@ const lolSatellite = {
       url: `${baseUrl}/lol/satellite/v1/ward-count?date=${date}&minOfDay=${minOfDay}`
     }).done(function (serverResponseData) {
       self.pushDataAndRun("wards", serverResponseData);
+      console.log(serverResponseData)
     });
 
     // kills
@@ -254,11 +255,11 @@ const lolSatellite = {
           tooltipElement.style.display = '';
 
           let html = "";
-          html += `${region.replace(/1/g, '')}<br>`;
-          html += `${data['wards'][region]} Wards<br>`;
-          html += `${data['kills'][region]} Kills<br>`;
-          html += `${data['teemos'][region]} Teemos<br>`;
-          html += `${data['yasuos'][region]} Yasuos<br>`;
+          html += `<strong>${region.replace(/1/g, '')}</strong>`;
+          html += `${Math.floor(data['wards'][region]/regionModifier['wards'][region])} Wards<br>`;
+          html += `${Math.floor(data['kills'][region]/regionModifier['kills'][region])} Kills<br>`;
+          html += `${Math.floor(data['teemos'][region]/regionModifier['teemos'][region])} Teemos<br>`;
+          html += `${Math.floor(data['yasuos'][region]/regionModifier['yasuos'][region])} Yasuos<br>`;
 
           tooltipElement.innerHTML = html;
           return;
