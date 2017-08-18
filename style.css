@@ -114,14 +114,9 @@ html, body {
 }
 
 .layout {
-    width: 1280px;
+    width: 1055px;
     height: 720px;
-    background: url(images/layout.png);
     background-size: cover;
-}
-
-.wrapper {
-    padding-top: 80px;
 }
 
 span {
