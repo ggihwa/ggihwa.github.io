@@ -160,7 +160,6 @@ const lolSatellite = {
       tempObj[regionData.region] = Math.floor(regionData.count * regionModifier[dataType][regionData.region]);
     });
     data[dataType] = tempObj;
-    console.log(dataType, data[dataType]);
     self.addPoints(dataType);
   },
 
@@ -232,11 +231,9 @@ const lolSatellite = {
     let display = document.getElementsByClassName(dataType)[0].style.display;
 
     if (display === 'none') {
-      console.log(`Show ${dataType}...`);
       document.getElementsByClassName(dataType)[0].style.display = '';
       document.getElementsByClassName(`legend-item legend-${dataType}`)[0].getElementsByClassName('checkbox')[0].classList.add('checked');
     } else {
-      console.log(`Hide ${dataType}...`);
       document.getElementsByClassName(dataType)[0].style.display = 'none';
       document.getElementsByClassName(`legend-item legend-${dataType}`)[0].getElementsByClassName('checkbox')[0].classList.remove('checked');
     }

@@ -57,7 +57,7 @@
     },
     {
       "id": "Satellite",
-      "displayName": "LOL Satellit",
+      "displayName": "LOL Satellite",
       "url": "//gh.riotgames.com/pages/kr-thunderdome/lol-satellite/",
       "priority": 50,
       "enabled": true
