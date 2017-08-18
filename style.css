@@ -28,6 +28,57 @@ html, body {
     opacity:0.5;
 }
 
+.region-label-kr, .region-label-na, .region-label-eun, .region-label-euw, .region-label-br, .region-label-tr, .region-label-jp, .region-label-oc {
+    font-family: 'LeagueGothic';
+    font-size: 20pt;
+    box-sizing: border-box;
+    text-shadow: 0 0 20px #000, -1px -1px 1px #000, 1px 1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000;
+    color: #17499b;
+    position: absolute;
+    z-index: 1;
+    opacity:0.4;
+}
+
+.region-label-kr {
+    top: 235px;
+    right: 165px;
+}
+
+.region-label-na {
+    top: 200px;
+    left: 110px;
+}
+
+.region-label-oc {
+    top: 520px;
+    right: 165px;
+}
+
+.region-label-jp {
+    top: 230px;
+    right: 120px;
+}
+
+.region-label-br {
+    top: 420px;
+    left: 395px;
+}
+
+.region-label-tr {
+    top: 252px;
+    right: 440px;
+}
+
+.region-label-euw {
+    top: 195px;
+    right: 585px;
+}
+
+.region-label-eun {
+    top: 150px;
+    right: 435px;
+}
+
 .timer {
     font-size: 14pt;
     color: rgba(146, 146, 146, 0.8);
@@ -40,7 +91,7 @@ html, body {
 .legends {
     /*border: 1px solid white;*/
     right: 30px;
-    bottom: 70px;
+    bottom: 240px;
     z-index: 1;
     padding:15px 15px 10px 15px;
     position: absolute;
