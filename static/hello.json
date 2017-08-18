@@ -56,8 +56,8 @@
       "enabled": true
     },
     {
-      "id": "Satellit",
-      "displayName": "LOL Satellit",
+      "id": "Satellite",
+      "displayName": "LOL Satellite",
       "url": "//ggihwa.github.io/",
       "priority": 50,
       "enabled": true
