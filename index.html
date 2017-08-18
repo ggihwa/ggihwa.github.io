@@ -1,66 +1,44 @@
-{
-  "navigation": [
-    {
-      "id": "star_guardian",
-      "displayName": "Star Guardian",
-      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/event/graceful-cobra",
-      "priority": 5,
-      "enabled": true
-    },
-    {
-      "id": "overview",
-      "displayName": "Overview",
-      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/overview",
-      "priority": 10,
-      "enabled": true,
-      "_abtest": {
-        "abtestId": "test-small-news-cards-1",
-        "groups": [
-          {
-            "abtestGroupId": "a",
-            "overrides": {
-              "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/overview/small-news-a"
-            }
-          },
-          {
-            "abtestGroupId": "b",
-            "overrides": {
-              "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/overview/small-news-b"
-            }
-          }
-        ],
-        "strategy": {
-          "name": "even-odd-account-id"
-        }
-      }
-    },
-    {
-      "id": "news",
-      "displayName": "News",
-      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/news",
-      "priority": 20,
-      "enabled": true
-    },
-    {
-      "id": "latest_patch_notes",
-      "displayName": "Patch Notes",
-      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/article/latest-patch-notes",
-      "priority": 30,
-      "enabled": true
-    },
-    {
-      "id": "merch_hub",
-      "displayName": "Merch",
-      "url": "//staging.frontpage.na.leagueoflegends.com/en_US/lol/home/merch",
-      "priority": 50,
-      "enabled": true
-    },
-    {
-      "id": "Satellit",
-      "displayName": "LOL Satellit",
-      "url": "//gh.riotgames.com/pages/kr-thunderdome/lol-satellite/",
-      "priority": 50,
-      "enabled": true
-    }
-  ]
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Legendary Quest</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="layout">
+	<div class="wrapper">
+		<div id="map">
+			<div class="title">LoL SATELLITE</div>
+			<div class="timer"></div>
+			<div class="legends">
+				<div class="legend-item legend-wards" onclick="lolSatellite.toggleLegend('wards');">
+					<div class="checkbox checked"></div>Wards
+				</div>
+				<div class="legend-item legend-kills" onclick="lolSatellite.toggleLegend('kills');">
+					<div class="checkbox checked"></div>Kills
+				</div>
+				<div class="legend-item legend-teemos" onclick="lolSatellite.toggleLegend('teemos');">
+					<div class="checkbox checked"></div>Teemos
+				</div>
+				<div class="legend-item legend-yasuos" onclick="lolSatellite.toggleLegend('yasuos');">
+					<div class="checkbox checked"></div>Yasuos
+				</div>
+			</div>
+			<div class="tooltip"></div>
+			<div class="wards"></div>
+			<div class="kills"></div>
+			<div class="teemos"></div>
+			<div class="yasuos"></div>
+			<img src="images/map.svg" width="1055px" />
+			<div class="timetracker-container">
+				<input id="slider" type="range" min="0" max="1439"
+				       step="1" value="0" data-orientation="vertical">
+			</div>
+		</div>
+	</div>
+</div>
+<script src="ward.js"></script>
+</body>
+</html>
